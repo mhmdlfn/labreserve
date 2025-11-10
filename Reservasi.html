@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>LabReserve - New Reservation</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1173d4",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+              "sidebar-light": "#ffffff",
+              "sidebar-dark": "#1f2937",
+              "foreground-light": "#111827",
+              "foreground-dark": "#f9fafb",
+              "subtle-light": "#e5e7eb",
+              "subtle-dark": "#374151",
+              "placeholder-light": "#6b7280",
+              "placeholder-dark": "#9ca3af",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet" />
+    <style>
+      .layout-grid {
+        display: flex;
+        min-height: 100vh;
+      }
+      .sidebar-menu {
+        width: 256px;
+      }
+      .sidebar a.active-link {
+        background-color: #e5e7eb;
+        color: #1173d4;
+        font-weight: 600;
+      }
+      .dark .sidebar a.active-link {
+        background-color: #374151;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+    <div class="layout-grid">
+      <aside
+        class="w-64 flex-shrink-0 bg-sidebar-light dark:bg-background-dark border-r border-slate-200 dark:border-slate-800 flex flex-col">
+        <div
+          class="h-16 flex items-center px-6 gap-3 border-b border-slate-200 dark:border-slate-800">
+          <div class="text-primary size-7">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                clip-rule="evenodd"
+                d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+                fill="currentColor"
+                fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h1 class="text-xl font-bold text-slate-900 dark:text-white">
+            LabReserve
+          </h1>
+        </div>
+        <nav class="flex-1 px-4 py-4 sidebar">
+          <ul class="space-y-2">
+            <li>
+              <a
+                class="flex items-center gap-3 px-4 py-2 rounded text-slate-600 dark:text-slate-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary"
+                href="home.html">
+                <span class="material-symbols-outlined">dashboard</span>Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="active-link flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary"
+                href="RoomList.html">
+                <span class="material-symbols-outlined">event_available</span
+                >Availability</a
+              >
+            </li>
+            <li>
+              <a
+                href="Jadwal.html"
+                class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary dark:hover:text-primary">
+                <span class="material-symbols-outlined">schedule</span>Room
+                Usage</a
+              >
+            </li>
+            <li>
+              <a
+                class="flex items-center gap-3 px-4 py-2 rounded text-slate-600 dark:text-slate-400 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary"
+                href="Admin.html">
+                <span class="material-symbols-outlined">group</span>Users</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <div class="flex-1 flex flex-col">
+        <header
+          class="h-16 flex items-center justify-end px-6 gap-4 bg-white dark:bg-background-dark/80 border-b border-gray-200 dark:border-gray-700/50 flex-shrink-0">
+          <button
+            class="relative p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            <span
+              class="material-symbols-outlined text-gray-600 dark:text-gray-300"
+              >notifications</span
+            >
+          </button>
+
+          <div class="relative" id="profile-dropdown-container">
+            <button
+              id="profile-button"
+              class="w-10 h-10 bg-gray-300 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-800 dark:text-gray-200 transition-shadow duration-150 focus:outline-none focus:ring-2 focus:ring-primary"
+              type="button">
+              <img
+                id="profile-img"
+                class="w-full h-full object-cover rounded-full hidden"
+                alt="Foto Profil" />
+              <span id="profile-initials" class="font-semibold text-lg">U</span>
+            </button>
+
+            <div
+              id="profile-menu"
+              class="absolute right-0 mt-2 w-48 rounded-lg shadow-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 z-50 hidden origin-top-right transform scale-95 opacity-0 transition-all duration-200"
+              role="menu"
+              tabindex="-1">
+              <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+                <p
+                  class="text-sm font-medium text-gray-900 dark:text-white truncate"
+                  id="dropdown-username"></p>
+                <p
+                  class="text-xs text-gray-500 dark:text-gray-400"
+                  id="dropdown-role"></p>
+              </div>
+              <div class="py-1" role="none">
+                <button
+                  id="change-photo-btn"
+                  class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                  role="menuitem"
+                  tabindex="-1">
+                  Ubah Foto Profil
+                </button>
+                <button
+                  id="logout-btn"
+                  class="block w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-gray-700"
+                  role="menuitem"
+                  tabindex="-1">
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="flex-grow p-8 overflow-y-auto">
+          <div class="max-w-xl mx-auto">
+            <div class="mb-8">
+              <h2
+                class="text-3xl font-bold text-foreground-light dark:text-foreground-dark">
+                New Laboratory Reservation
+              </h2>
+              <p
+                class="text-foreground-light/70 dark:text-foreground-dark/70 mt-1">
+                Fill out the form below to book a slot in the laboratory.
+              </p>
+              <div
+                class="mt-4 p-4 rounded-lg bg-yellow-100/50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700/50 text-sm text-yellow-800 dark:text-yellow-200">
+                ⚠️ You are reserving
+                <strong id="reserved-room-name">Computer Lab</strong>. Adjust
+                details below.
+              </div>
+            </div>
+
+            <form
+              id="reservation-form"
+              class="space-y-6 bg-white dark:bg-background-dark/50 p-6 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700/50">
+              <h2
+                id="room-name-display"
+                class="text-xl font-semibold mb-4 text-center">
+                Memuat nama ruangan...
+              </h2>
+
+              <div>
+                <label
+                  class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2"
+                  for="name"
+                  >Full Name</label
+                >
+                <input
+                  class="form-input w-full bg-background-light dark:bg-background-dark border border-subtle-light dark:border-subtle-dark rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-colors placeholder-placeholder-light dark:placeholder-placeholder-dark"
+                  id="name"
+                  name="name"
+                  placeholder="Revina Akbar"
+                  type="text"
+                  required />
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2"
+                    for="date"
+                    >Date</label
+                  >
+                  <input
+                    class="form-input w-full bg-background-light dark:bg-background-dark border border-subtle-light dark:border-subtle-dark rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-colors placeholder-placeholder-light dark:placeholder-placeholder-dark"
+                    id="date"
+                    name="date"
+                    type="date"
+                    required />
+                </div>
+
+                <div>
+                  <label
+                    class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2"
+                    for="time"
+                    >Time</label
+                  >
+                  <input
+                    class="form-input w-full bg-background-light dark:bg-background-dark border border-subtle-light dark:border-subtle-dark rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-colors placeholder-placeholder-light dark:placeholder-placeholder-dark"
+                    id="time"
+                    name="time"
+                    type="time"
+                    required />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2"
+                  for="purpose"
+                  >Purpose of Reservation</label
+                >
+                <textarea
+                  class="form-textarea w-full bg-background-light dark:bg-background-dark border border-subtle-light dark:border-subtle-dark rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-colors placeholder-placeholder-light dark:placeholder-placeholder-dark"
+                  id="purpose"
+                  name="purpose"
+                  placeholder="Describe the reason for your reservation..."
+                  rows="4"
+                  required></textarea>
+              </div>
+
+              <div class="flex justify-end pt-4">
+                <button
+                  id="submit-reservation-btn"
+                  class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark transition-all duration-300 shadow-lg hover:shadow-primary/40"
+                  type="submit">
+                  Submit Reservation
+                </button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div
+      id="upload-modal"
+      class="fixed inset-0 bg-gray-900/80 hidden justify-center z-[100]">
+      <div
+        class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-2xl max-w-sm w-full space-y-4 transform transition-all self-center">
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+          Ubah Foto Profil
+        </h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Pilih gambar dari komputer Anda untuk mengganti foto profil.
+        </p>
+
+        <form id="photo-upload-form">
+          <input type="file" id="photo-input" accept="image/*" class="hidden" />
+
+          <button
+            type="button"
+            id="select-photo-btn"
+            class="w-full py-2 px-4 border border-gray-300 dark:border-gray-600 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+            Pilih File Gambar (.jpg, .png)
+          </button>
+
+          <div class="mt-4 flex justify-end space-x-3">
+            <button
+              type="button"
+              id="cancel-upload-btn"
+              class="py-2 px-4 rounded-lg text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+              Batal
+            </button>
+            <button
+              type="submit"
+              id="save-photo-btn"
+              class="py-2 px-4 rounded-lg text-sm font-medium text-white bg-primary hover:bg-primary/90 transition-colors disabled:bg-gray-400"
+              disabled>
+              Simpan Foto
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      document
+        .getElementById("reservation-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const date = document.getElementById("date").value;
+          const time = document.getElementById("time").value;
+          const purpose = document.getElementById("purpose").value;
+          const params = new URLSearchParams(window.location.search);
+          const room =
+            params.get("room") ||
+            document.getElementById("reserved-room-name").textContent;
+
+          const newReservation = {
+            room,
+            name,
+            date,
+            time,
+            purpose,
+          };
+
+          // Ambil data lama dari localStorage
+          const storedReservations = JSON.parse(
+            localStorage.getItem("reservations") || "[]"
+          );
+
+          // Tambahkan data baru
+          storedReservations.push(newReservation);
+
+          // Simpan lagi ke localStorage
+          localStorage.setItem(
+            "reservations",
+            JSON.stringify(storedReservations)
+          );
+
+          alert("Reservation submitted successfully!");
+          window.location.href = "Jadwal.html";
+        });
+    </script>
+    <script>
+      // Ambil parameter dari URL, misalnya ?room=Computer%20Lab%20A101
+      const params = new URLSearchParams(window.location.search);
+      const roomName = params.get("room");
+
+      // Kalau ada nama ruangannya, tampilkan ke teks
+      if (roomName) {
+        const el = document.getElementById("reserved-room-name");
+        if (el) el.textContent = roomName;
+      }
+    </script>
+  </body>
+</html>
